@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TilesOfElinor-withTZ.iml" filepath="$PROJECT_DIR$/TilesOfElinor-withTZ.iml" />
-      <module fileurl="file://C:\Users\Pavlo\AndroidStudioProjects\TilesOfElinor-withTZ\TilesOfElinor-withTZ.iml" filepath="C:\Users\Pavlo\AndroidStudioProjects\TilesOfElinor-withTZ\TilesOfElinor-withTZ.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\Pavlo\AndroidStudioProjects\TilesOfElinor-withTZ\app\app.iml" filepath="C:\Users\Pavlo\AndroidStudioProjects\TilesOfElinor-withTZ\app\app.iml" />
     </modules>
   </component>
 </project>

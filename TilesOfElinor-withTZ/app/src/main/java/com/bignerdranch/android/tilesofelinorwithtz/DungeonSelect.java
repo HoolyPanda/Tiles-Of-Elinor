@@ -20,7 +20,7 @@ import java.io.IOException;
  */
 
 public class DungeonSelect extends Activity  {
- //   final String localpath= getIntent().getStringExtra("newpath");
+ // final String localpath= getIntent().getStringExtra("newpath");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,26 +33,26 @@ public class DungeonSelect extends Activity  {
         FloatingActionButton fab= findViewById(R.id.fab1);
         fab.setVisibility(View.INVISIBLE);
         AssetManager am =getApplicationContext().getAssets();
-        TextView txt1= new TextView(getApplicationContext()); //getIntent().getStringExtra("newpath")
+        TextView txt1= new TextView(getApplicationContext());
         txt1.setText(getIntent().getStringExtra("newpath"));
         try {
             String[] RawFiles = am.list( getIntent().getStringExtra("newpath"));
-            String[] Files = new String[RawFiles.length-3];
-            for(Integer i = 0;i!=(RawFiles.length-3);i++){
-                Files[i]= RawFiles[i+3];
+            String[] Files = new String[RawFiles.length-2];
+            for(Integer i = 0;i!=(RawFiles.length-2);i++){
+                Files[i] = RawFiles[i+2];
             }
-           // Files[4]= "";
-            ArrayAdapter ar =  new ArrayAdapter(this, android.R.layout.simple_list_item_1,Files) ;
+
+            ArrayAdapter ar = new ArrayAdapter(this, android.R.layout.simple_list_item_1,Files) ;
             list.setAdapter(ar);
             list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     String path = getIntent().getStringExtra("newpath");
                     TextView txt= (TextView) view;
-                     String s= path+ "/"+txt.getText().toString();
-                  //  if(s.equals("Dungeons/43 Старый Холм/Зал Костей 1")){Toast.makeText(getApplicationContext(), path, Toast.LENGTH_LONG ).show();}
+                    String s= path+ "/"+txt.getText().toString();
                     Intent intent = new Intent(DungeonSelect .this, EnterTheDungeon.class);
-                    intent.putExtra("dungeon", path);
+                    intent.putExtra("chousendungeon",txt.getText().toString());
+                    intent.putExtra("dungeon",path);
                     intent.putExtra("newpath1",s);
                     startActivity(intent);
                 }

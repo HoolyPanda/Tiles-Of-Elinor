@@ -78,8 +78,9 @@ public class Encounter extends Activity  {
                     String[] RawFiles0 = new String[0];
                     try {
                         RawFiles0 = am.list(a0);
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                    }
+                    catch (IOException e) {
+                       e.printStackTrace();
                     }
                     String[] RawFiles1 = new String[0];
                     try {
@@ -160,7 +161,7 @@ public class Encounter extends Activity  {
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
-                        } catch (IOException e) {
+                         } catch (IOException e) {
                             e.printStackTrace();
                         }
                     } catch (IOException e) {

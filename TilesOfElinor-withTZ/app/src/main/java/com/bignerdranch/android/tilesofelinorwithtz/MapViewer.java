@@ -22,28 +22,28 @@ public class MapViewer extends Activity  {
         WebView Map= findViewById(R.id.map);
         String res = getIntent().getStringExtra("path");
         //Toast.makeText(getApplicationContext(),res,Toast.LENGTH_LONG ).show() ;
-        FloatingActionButton fab2= findViewById(R.id.floatingActionButton3);
-        String file= "file:///android_asset/"+res+"/map.html";
+       // FloatingActionButton fab2= findViewById(R.id.floatingActionButton3);
+        String file= "file:///android_asset/"+res+"/Map"+"/map.html";
         Map.getSettings().setSupportZoom(true);
         Map.getSettings().setDefaultZoom(WebSettings.ZoomDensity.FAR);
         Map.getSettings().setBuiltInZoomControls(true);
 
         if (res.equals("Dungeons")==true){
             Map.loadUrl("file:///android_asset/Maps/map.html");
-            fab2.hide();
+           // fab2.hide();
         }else{
             Map.loadUrl(file);
             }
 
-        fab2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String res = getIntent().getStringExtra("path");
-                Intent intent = new Intent(MapViewer.this, EncounterList.class);
-                intent.putExtra("dungeon", res);
-                startActivity(intent);
-            }
-        });
+       // fab2.setOnClickListener(new View.OnClickListener() {
+         //   @Override
+           // public void onClick(View view) {
+             //   String res = getIntent().getStringExtra("path");
+               // Intent intent = new Intent(MapViewer.this, EncounterList.class);
+                //intent.putExtra("dungeon", res);
+                //startActivity(intent);
+           // }
+        //});
     }
 
 }

@@ -19,8 +19,6 @@ import java.io.IOException;
  */
 
 public class EncounterList extends Activity  {
-   // static String path ="Dungeons";// static  int i;
-    //String p = DungeonSelect.localpath;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +30,9 @@ public class EncounterList extends Activity  {
         ListView list1 = findViewById(R.id.list1);//"Dungeons/43 Старый Холм/Encounters"
 
         try {
-           String p= getIntent().getStringExtra("dungeon")+"/Encounters";
-           // Toast.makeText(EncounterList.this ,p,Toast.LENGTH_SHORT).show() ;
+           String p= getIntent().getStringExtra("dungeon");
+           p +=  "/"+ getIntent().getStringExtra("chousendungeon")+"/Encounters";
+           Toast.makeText(EncounterList.this ,p,Toast.LENGTH_LONG).show() ;
            String[] RawFiles = am.list(p);
             final ArrayAdapter ar =  new ArrayAdapter(this, android.R.layout.simple_list_item_1,RawFiles) ;
             list1.setAdapter(ar);
@@ -43,7 +42,8 @@ public class EncounterList extends Activity  {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               String  p =getIntent().getStringExtra("dungeon");
+                String p= getIntent().getStringExtra("dungeon");
+                p +=  "/"+ getIntent().getStringExtra("chousendungeon");
                 Intent intent = new Intent(EncounterList .this, MapViewer.class);
                 intent.putExtra("path", p);
                 startActivity(intent);
@@ -52,10 +52,10 @@ public class EncounterList extends Activity  {
         list1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String p= getIntent().getStringExtra("dungeon")+"/Encounters";
+                String p= getIntent().getStringExtra("dungeon");
+                p +=  "/"+ getIntent().getStringExtra("chousendungeon")+"/Encounters";
                 TextView txt= (TextView) view;
                 String s = p+ "/"+txt.getText().toString();
-               // Toast.makeText(EncounterList.this ,s,Toast.LENGTH_SHORT);
                 Intent intent = new Intent(EncounterList.this, Encounter.class);
                 intent.putExtra("newpath",s);
                 startActivity(intent);

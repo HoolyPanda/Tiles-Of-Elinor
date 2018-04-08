@@ -42,7 +42,6 @@ public class EnterTheDungeon extends Activity  {
         AssetManager am = getApplicationContext().getAssets();
         Button button= findViewById(R.id.button);
         FloatingActionButton fab= findViewById(R.id.floatingActionButton2);
-       // Toast.makeText(EnterTheDungeon.this, getIntent().getStringExtra("dungeon")+"dungeon", Toast.LENGTH_LONG ).show();
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,6 +70,7 @@ public class EnterTheDungeon extends Activity  {
                             String path = getIntent().getStringExtra("newpath1");
                             String a= getIntent().getStringExtra("dungeon");
                             Intent intent = new Intent(EnterTheDungeon .this, EncounterList.class);
+                            intent.putExtra("chousendungeon", getIntent().getStringExtra("chousendungeon"));
                             intent.putExtra("dungeon",a);
                             intent.putExtra("path",path);
                             startActivity(intent);
@@ -82,6 +82,7 @@ public class EnterTheDungeon extends Activity  {
                     String a= getIntent().getStringExtra("dungeon");
                     Toast.makeText(EnterTheDungeon.this, "Для этого подземельня нет сценария", Toast.LENGTH_LONG ).show();
                     Intent intent = new Intent(EnterTheDungeon .this, EncounterList.class);
+                    intent.putExtra("chousendungeon", getIntent().getStringExtra("chousendungeon"));
                     intent.putExtra("dungeon",a);
                     intent.putExtra("path",path);
                     startActivity(intent);
