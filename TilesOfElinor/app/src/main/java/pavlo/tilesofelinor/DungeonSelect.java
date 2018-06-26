@@ -1,4 +1,4 @@
-package com.bignerdranch.android.tilesofelinorwithtz;
+package pavlo.tilesofelinor;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -56,5 +56,5 @@ public class DungeonSelect extends Activity  {
             e.printStackTrace();
         }
 
-}
+    }
 }
